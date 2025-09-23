@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link id="linkcss" rel="stylesheet" href="To-dolist-sun.css">
+        <link rel="stylesheet" href="To-dolist-updata-img/nodata-removebg-preview.png">
+        <link id="linkcss" rel="stylesheet" href="To-dolist-update-sun.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     </head>
     <body>
@@ -24,16 +25,21 @@
         </div>
         <div class="todo-list">
             <div class="todo-listcard">
-                <div class="todo-listcard-done"></div>
+                <div class="todo-listcard-done">
+                    <div class="Done"><i class="fa-solid fa-check"></i></div>
+                </div>
                 <div class="note-inf"></div>
                 <div class="todo-listcard-edit"> 
-                    <i class="fa-solid fa-pen"></i>
+                    <i id="editnote" class="fa-solid fa-pen"></i>
                     <i id="delete" class="fa-solid fa-trash"></i>
                 </div>
             </div>
             <hr>
         </div>
         <div class="todo-list-2"></div>
+        <div class="nonedata">
+            <img src="To-dolist-updata-img/nodata-removebg-preview.png" alt="">
+        </div>
         <div class="addNote" onclick="addNote()" >
             <i class="fa-solid fa-plus"></i>
         </div>
@@ -54,9 +60,9 @@
 <!-- phần hiển thị phụ function-filter -->
         <div class="filter">
             <div id="filter-1">All</div>
-            <div>Complete</div>
+            <div id="filter-2">Complete</div>
             <div id="filter-3">Incomplete</div>
         </div>
-        <script src="To-dolist.js"></script>        
+        <script src="To-dolist-update.js"></script>        
     </body>
 </html>
