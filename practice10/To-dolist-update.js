@@ -83,17 +83,20 @@ function addNote(){
             apply()
         }
     }
+
 }
 function cancel(){
         add[0].style.display='none'
-        addTable[0].style.display='none'        
+        addTable[0].style.display='none' 
+        warning.style.display='none'       
 }
 function addHide(){
     add[0].style.display='none'
     addTable[0].style.display='none'
+    warning.style.display='none'
 }
 input.addEventListener('input',()=>{
-    if(input.value.length >240){
+    if(input.value.length >240&& input.value.length===''){
         warning.style.display='block'
     }
     else{
@@ -137,6 +140,7 @@ function noteData(){
             else {
                 const input =document.createElement('input')
                 input.value= NOTE.note
+                clone.querySelector('.note-inf').style.overflow='hidden'
                 input.type = 'text'
                 input.style.height= '100%'
                 input.style.width= '100%'
@@ -195,7 +199,7 @@ function apply(){
     note: input.value,
     doYouDone: 0
     }
-    if(input.value.length<240){
+    if(input.value.length<240 && input.value.length>0){
         x=0
         let data= JSON.parse(localStorage.getItem('Note')) || []
         if(!Array.isArray(data)){
@@ -211,32 +215,36 @@ function apply(){
         x===1? (noteData(),cancel(),document.querySelector('.function-filter-text').textContent='ALL'): alert('cấp cứu lỗi rồi')
         input.value=''
     }
+    else{
+        warning.style.display='block'
+    }
 }
-function getcards(){
-    return Array.from(document.querySelectorAll('.todo-list-2 .todo-listcard')).filter(card => card.style.display !== 'none');
-}
+// function getcards(){
+//     return Array.from(document.querySelectorAll('.todo-list-2 .todo-listcard')).filter(card => card.style.display !== 'none');
+// }
 function functionSearch(){
     function search(){
-        m=0
         var search= document.getElementById('function-search').value.trim().toLowerCase()
-        if(getcards().length>0) {
-            cards= getcards()
+        cards= document.querySelectorAll('.todo-list-2 .todo-listcard')
+        document.querySelector('.function-filter-text').textContent='ALL'
+        document.getElementById('function-search').value=''
+        m=0
+        if(search!==''){
+            cards.forEach ((card) => {
+                let inf= card.querySelector('.note-inf').textContent.trim().toLowerCase()
+                if(!inf.includes(search)) {
+                    card.style.display='none'
+                }
+                else{
+                    card.style.removeProperty('display')
+                    m+=1
+                }
+            })
         }
         else{
-            cards= document.querySelectorAll('.todo-list-2 .todo-listcard')
-            document.querySelector('.function-filter-text').textContent='ALL'
-            document.getElementById('function-search').value=''
+            m+=1
+            cards.forEach ((card) => {card.style.removeProperty('display')})
         }
-        cards.forEach ((card) => {
-            let inf= card.querySelector('.note-inf').textContent.trim().toLowerCase()
-            if(!inf.includes(search)) {
-                card.style.display='none'
-            }
-            else{
-                card.style.removeProperty('display')
-                m+=1
-            }
-        })
         if(m===0){
             document.querySelector('.nonedata').style.display='block'
         }
@@ -244,7 +252,7 @@ function functionSearch(){
     }
     document.onkeyup = function(event) {
         if(event.key==='Enter') {
-            search()
+            search();
         }
     }
     document.querySelector('.fa-magnifying-glass').onclick= search

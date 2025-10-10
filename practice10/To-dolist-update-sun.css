@@ -186,6 +186,7 @@ input::placeholder{
     font-weight: 500;
     color: black;
     font-size: 2vh;
+    overflow: auto;
 }
 .todo-listcard-edit{
     font-size: 1.7vh;
@@ -294,4 +295,120 @@ input::placeholder{
 :root{
     --sun: rgb(247, 247, 247);
     --moon: black:
+}
+/* của mobile */
+@media only screen and (max-width: 46em){
+    .function-search div{
+        margin-left: -7vw;
+        margin-right: 1.8vw;
+    }
+    .function-search input{
+        height: 3.5vh;
+        width: 50vw;
+        font-size: 12px;
+    }
+    .function-filter{
+        height: 4vh;
+        width: 20.5vw;
+    }
+    .function-light{
+        height: 4vh;
+        width: 6vw;
+    }
+    .filter{
+        width: 20.5vw;
+        left: 63vw;
+    }
+    .filter div{
+        width: initial;
+    }
+    .nonedata{
+        width: 50vw;
+        height: 30vh;
+        margin-left: 25vw;
+    }
+    .todo-list{
+        width: 75vw;
+        margin-left: 17.5vw;
+    }
+    .todo-list-2{
+        width: 75vw;
+        margin-left: 17.5vw;
+    }
+    .note-inf{
+        width: 68%;
+        margin-right: 3vw;
+
+    }
+    .add-table{
+        background-color: #f7f7f7;
+        height: auto;
+        width: 65vw;
+        position: absolute;
+        top: 16vh;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        display: none;
+        z-index: 2;
+    }
+    .add-table button{
+        width: 20vw;
+    }
+}
+/* của tablet: width >= 740px and <= 1024px */
+@media only screen and (min-width:46.25em ) and (max-width: 63.937em) {
+    .function-search div{
+        margin-left: -3vw;
+        margin-right: 0.5vw;
+    }
+    .function-search input{
+        width: 38vw;
+    }
+    .function-filter{
+        width: 9.5vw;
+    }
+    .function-light{
+        width: 4vw;
+    }
+    .filter{
+        width: 9.5vw;
+        left: 63vw;
+    }
+    .filter div{
+        width: initial;
+    }
+    .nonedata{
+        width: 45vw;
+        height: 30vh;
+        margin-left: 27.5vw;
+    }
+    .todo-list{
+        width: 60vw;
+        margin-left: 20vw;
+    }
+    .todo-list-2{
+        width: 60vw;
+        margin-left: 24vw;
+    }
+    .note-inf{
+        width: 68%;
+        margin-right: 3vw;
+
+    }
+    .add-table{
+        background-color: #f7f7f7;
+        height: auto;
+        width: 55vw;
+        position: absolute;
+        top: 16vh;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 10px;
+        display: none;
+        z-index: 2;
+    }
+    .add-table button{
+        width: 16vw;
+    }
 }
