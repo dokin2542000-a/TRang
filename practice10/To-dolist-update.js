@@ -199,7 +199,7 @@ function apply(){
     note: input.value,
     doYouDone: 0
     }
-    if(input.value.length<240 && input.value.length>0){
+    if(input.value.length<240 && input.value.trim().length>0){
         x=0
         let data= JSON.parse(localStorage.getItem('Note')) || []
         if(!Array.isArray(data)){

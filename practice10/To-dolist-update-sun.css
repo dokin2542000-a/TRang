@@ -38,8 +38,12 @@ input::placeholder{
 }
 .function-search div{
     margin-left: -1.5vw;
-    padding-top: 0.7vh;
+    /* padding-top: 0.7vh; */
     color: #948dfc;
+    align-content: center;
+}
+.function-search div:hover{
+    cursor: pointer;
 }
 .function-filter{
     height: 4.3vh;
@@ -170,6 +174,7 @@ input::placeholder{
     width: 3vh;
     border-radius: 3px;
     border: solid 1.5px #4d489f;
+    cursor: pointer;
 }
 .todo-listcard-done .Done{
     color: white;
@@ -187,14 +192,19 @@ input::placeholder{
     color: black;
     font-size: 2vh;
     overflow: auto;
+    cursor: pointer;
 }
 .todo-listcard-edit{
     font-size: 1.7vh;
-    color: #dbdbdb;
+    color: #7c7c7c;
     margin-left: 0.7vw;
+}
+#editnote{
+    cursor: pointer;
 }
 #delete{
     margin-left: 0.7vw;
+    cursor: pointer;
 }
 .addNote{
     height: 5vh;
@@ -301,6 +311,7 @@ input::placeholder{
     .function-search div{
         margin-left: -7vw;
         margin-right: 1.8vw;
+        height: 4vh;
     }
     .function-search input{
         height: 3.5vh;
