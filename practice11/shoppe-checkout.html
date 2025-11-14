@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="shoppe-checkout.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="content-box">
+            <p id="title">Checkout</p>
+            <p>Contact Information</p>
+            <input id="Email" type="text" placeholder="Email">
+            <p>Shipping Address</p>
+            <input id="Fullname" type="text" placeholder="Full Name">
+            <input id="Address" type="text" placeholder="Address">
+            <input id="City" type="text" placeholder="City">
+            <p>Payment</p>
+            <input id="Card" type="text" placeholder="Credit Card Number">
+            <div class="collape">
+                <input id="Expiration" type="text" placeholder="Expoiration Date">
+                <input id="CVV" type="text" placeholder="CVV">
+                <div class="order" onclick="order()">
+                    <span>Place Order</span>
+                </div>
+            </div>
+            <div class="cancel-incom">
+                <button id="cancel" onclick="cancel()"><i class="fa-solid fa-chevron-left"></i> Quay lại</button>
+                <span id="incomplete">kk</span>
+            </div>
+        </div>
+        <div class="content-success">
+            <div class="content-success-tick">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="content-success-notice">
+                <p id="successful">Order Successful</p>
+                <p id="thanks">Thank you for your order!</p>
+            </div>
+            <hr>
+            <div class="customer-inf">
+                <p id="customer-inf-title">Customer Information</p>
+                <p id="email-tile">Email</p>
+                <p id="email">ê</p>
+                <p id="address-title">Shipping Address</p>
+                <p id="customer-name">kk</p>
+                <p id="customer-city">hanoi</p>
+                <p id="customer-address">donganh</p>
+            </div>
+            <button id="continue" onclick="cancel()"><i class="fa-solid fa-basket-shopping"></i> Về gian hàng</button>
+        </div>
+        <script src="shoppy-checkout.js"></script>
+    </body>
+</html>
