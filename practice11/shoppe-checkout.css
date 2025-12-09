@@ -15,7 +15,7 @@ body{
     z-index: 0;
 }
 .content-success{
-    /* display: none; */
+    display: none;
     height: 62vh;
     width: 28vw;
     background-color: white;
